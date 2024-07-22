@@ -16,7 +16,7 @@ To use this module, include it in your Terraform configuration.
 Example
 ```hcl
 module "efs" {
-source                    = "git::https://github.com/opsstation/terraform-aws-efs.git?ref=v1.0.0"
+source                    = "git::https://github.com/sohanyadav/terraform-aws-efs.git?ref=v1.0.0"
 name                      = "efs"
 environment               = "test"
 creation_token            = "changeme"
@@ -35,14 +35,14 @@ availability_zone_name = ["us-west-1a", "us-west-1"]
 ```
 
 ## Examples
-For detailed examples on how to use this module, please refer to the [examples](https://github.com/opsstation/terraform-aws-efs/tree/master/_example) directory within this repository.
+For detailed examples on how to use this module, please refer to the [examples](https://github.com/sohanyadav/terraform-aws-efs/tree/master/_example) directory within this repository.
 
 ## License
-This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/opsstation/terraform-aws-efs/blob/master/LICENSE) file for more details.
+This Terraform module is provided under the **MIT** License. Please see the [LICENSE](https://github.com/sohanyadav/terraform-aws-efs/blob/master/LICENSE) file for more details.
 
 ## Author
 Your Name
-Replace **MIT** and **opsstation** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
+Replace **MIT** and **sohanyadav** with the appropriate license and your information. Feel free to expand this README with additional details or usage instructions as needed for your specific use case.
 
 
 <!-- BEGIN_TF_DOCS -->
@@ -63,7 +63,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_label"></a> [label](#module\_label) | git::https://github.com/opsstation/terraform-aws-labels.git | v1.0.0 |
+| <a name="module_label"></a> [label](#module\_label) | git::https://github.com/sohanyadav/terraform-aws-labels.git | v1.0.0 |
 
 ## Resources
 
@@ -81,7 +81,7 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+|------|-------------|------|-----|:--------:|
 | <a name="input_access_point_enabled"></a> [access\_point\_enabled](#input\_access\_point\_enabled) | n/a | `bool` | `true` | no |
 | <a name="input_allow_cidr"></a> [allow\_cidr](#input\_allow\_cidr) | Provide allowed cidr to efs | `list(any)` | `[]` | no |
 | <a name="input_availability_zones"></a> [availability\_zones](#input\_availability\_zones) | Availability Zone IDs | `list(string)` | n/a | yes |
@@ -100,10 +100,10 @@ Replace **MIT** and **opsstation** with the appropriate license and your informa
 | <a name="input_from_port"></a> [from\_port](#input\_from\_port) | Security group IDs to allow access to the EFS | `number` | `2049` | no |
 | <a name="input_kms_key_id"></a> [kms\_key\_id](#input\_kms\_key\_id) | The ARN for the KMS encryption key. When specifying kms\_key\_id, encrypted needs to be set to true. | `string` | `""` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | label order, e.g. `name`,`application` | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'opsstation'. | `string` | `"opsstation"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'sohanyadav'. | `string` | `"example"`| no |
 | <a name="input_mount_target_description"></a> [mount\_target\_description](#input\_mount\_target\_description) | n/a | `string` | `"this is mount target security group "` | no |
 | <a name="input_mount_target_ip_address"></a> [mount\_target\_ip\_address](#input\_mount\_target\_ip\_address) | The address (within the address range of the specified subnet) at which the file system may be mounted via the mount target | `string` | `null` | no |
-| <a name="input_name"></a> [name](#input\_name) | Solution name, e.g. `app` | `string` | `""` | no |
+| <a name="input_name"></a> [name](#input\_name) | Solution name, e.g. `app` | `string` | `""`| no |
 | <a name="input_override_policy_documents"></a> [override\_policy\_documents](#input\_override\_policy\_documents) | List of IAM policy documents that are merged together into the exported document. In merging, statements with non-blank `sid`s will override statements with the same `sid` | `list(string)` | `[]` | no |
 | <a name="input_performance_mode"></a> [performance\_mode](#input\_performance\_mode) | The file system performance mode. Can be either `generalPurpose` or `maxIO` | `string` | `"generalPurpose"` | no |
 | <a name="input_policy_statements"></a> [policy\_statements](#input\_policy\_statements) | A list of IAM policy [statements](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document#statement) for custom permission usage | `any` | `[]` | no |
